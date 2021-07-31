@@ -1,0 +1,420 @@
+/* Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans&display=swap');
+
+/* Global styles*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: grid;
+    grid-template-areas: "logo links";
+    padding: 1rem;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+/* /.Global styles */
+
+/* Navbar Content*/
+nav a {
+    color: #fff;
+    transition: .2s;
+}
+
+nav .my-logo {
+    font-family: 'Courgette', cursive;
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 2rem;
+}
+
+nav .my-logo a {
+    text-decoration: none;
+}
+
+nav .pages-links {
+    grid-area: links;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+nav .pages-links li {
+    display: inline;
+    padding: 1rem;
+    font-family: monospace, cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
+
+.icon-cont {
+    display: none;
+    grid-area: icon;
+}
+/* /.Navbar Content*/
+
+
+/* Responsive Navbar */
+nav.nvbr.rspnsv_nv {
+    grid-template-areas: "logo icon"
+                         "links links";
+}
+
+@media screen and (max-width: 768px) {
+
+    .pages-links {
+        flex-direction: column;
+        align-items: flex-start!important;
+    }
+
+    .pages-links li {
+        display: none!important;
+    }
+
+    .icon-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    nav.nvbr {
+        grid-template-areas: "logo icon"
+    }
+
+    nav.nvbr.rspnsv_nv li {
+        display: block!important;
+    }
+}
+
+/* /.Responsive Navbar */
+
+
+/* About page */
+#about-b {
+    background-color: #DDD;
+}
+
+.nvbr#nvbr-about {
+    position: static;
+}
+
+.nvbr#nvbr-about a {
+    color: #DDD;
+}
+
+.nvbr#nvbr-about a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+header.about-header {
+    display: grid;
+    grid-template-areas: "bio progress";
+    justify-items: center;
+    align-items: center;
+}
+
+.about-header #my-info {
+    grid-area: bio;
+}
+
+.about-header #my-prog {
+    grid-area: progress;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.tech {
+    margin: 2rem 0;
+}
+
+.about-header #my-info h3 {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bolder;
+}
+
+.about-header #my-info p {
+    color: #000;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.about-header #my-prog .progress-cont .tech h3 {
+    color: #43484b;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+.about-header #my-prog .progress-cont .tech div {
+    background: #CCC;
+    width: 90%;
+    height: 25px;
+    line-height: 25px;
+    text-align: right;
+}
+
+.about-header #my-prog .progress-cont .tech div span {
+    display: block;
+    background: rgb(19, 165, 0);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Responsive Navbar [About]*/
+
+@media screen and (max-width: 768px) {
+    header.about-header {
+        grid-template-areas: "bio bio"
+                             "progress progress";
+        text-align: center;
+    }
+}
+
+/* /.Responsive Navbar [About]*/
+
+/* /.About page */
+
+/* Portfolio */
+
+.projects {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.section-header {
+    text-align: center;
+    width: 100%;
+}
+
+.section-header h1 {
+    color: #000;
+    font-size: 3rem;
+    letter-spacing: .2rem;
+    font-weight: 400;
+}
+
+.section-header p {
+    font-size: 2rem;
+    line-height: 2;
+    font-weight: 300;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.projects .images {
+    display: grid;
+    grid-template-areas: "col1 col2"
+                         "col5 col4"
+                         "col6 .";
+    width: 100%;
+    grid-gap: 1rem;
+    padding: 0 2rem;
+}
+
+.projects .images .col {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+
+.projects .images .col img {
+    max-width: 100%;
+    height: 30rem;
+}
+
+.projects .images .col .hover-text {
+    width: 100%;
+    height: 30rem;
+    position: absolute;
+    top: 0%;
+    text-align: center;
+    transition: .5s ease;
+    opacity: 0;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.projects .images .col:hover .hover-text a {
+    color: #fff;
+    width: 100%;
+}
+
+.projects .images .col .hover-text a:nth-of-type(1) {
+    margin: 0;
+    position: absolute;
+    top: 55%;
+    transition: .5s all;
+    opacity: 0;
+}
+
+.projects .images .col .hover-text a:nth-of-type(2) {
+    position: absolute;
+    top: 75%;
+    transition: .5s all;
+    transition-delay: .1s;
+    opacity: 0;
+}
+
+.projects .images .col:hover .hover-text a:nth-of-type(1) {
+    top: 45%;
+    opacity: 1;
+}
+
+.projects .images .col:hover .hover-text {
+    opacity: 1;
+}
+
+.col {
+    padding-right: 0px!important;
+    padding-left: 0px!important;
+}
+
+#porto-nv {
+    position: static;
+    background-color: #000;
+}
+
+#porto-nv a {
+    color: #fff;
+}
+
+#porto-nv ul {
+    margin: 0;
+}
+
+#porto-nv a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+#porto-b {
+    background-color: #EEE;
+}
+
+@media screen and (max-width: 768px) {
+    .projects .images {
+        display: grid;
+        grid-template-areas: "col1"
+                             "col2"
+                             "col3"
+                             "col4"
+                             "col5"
+                             "col6";
+        margin-top: 5rem;
+        width: 100%;
+    }
+}
+
+/* /.Portfolio*/
+
+/* Contact Me Section */
+#contact-nvbr {
+    position: static;
+    background-color: #000;
+}
+#contact-nvbr ul {
+    margin: 0;
+}
+
+main {
+    display: grid;
+    grid-template-areas: "contact-info map";
+    justify-content: space-around;
+}
+
+main .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: contact-info;
+}
+
+main .contact-info .contact-row {
+    font-size: large;
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+#contact-b {
+    background-color: #EEE;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        grid-template-areas: "contact-info contact-info"
+                             "map map";
+        justify-content: space-around;
+    }
+    main .contact-info {
+        align-items: center;
+    }
+}
+
+/* /.Contact Me Section */
+
+
+/* Necessary for full page carousel*/
+html,
+body,
+.view {
+  height: 100%;
+}
+
+/* Carousel*/
+.carousel,
+.carousel-item,
+.carousel-item.active {
+  height: 100%;
+}
+.carousel-inner {
+  height: 100%;
+}
+.carousel-item:nth-child(1) {
+  background-image: url("https://i.ibb.co/jGcRKWT/code.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.carousel-item:nth-child(2) {
+  background-image: url("https://i.ibb.co/mzp9QGt/pc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.cinside {
+    position: absolute;
+    top: 47.6%;
+    left: 19%;
+}
+
+.cinside h1 {
+    font-family: monospace;
+    font-size: xx-large;
+    color: #fff;
+}
+
+/* active-link */
+ .active-link {
+     color: #0056b3!important;
+ }
