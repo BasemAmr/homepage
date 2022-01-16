@@ -3,13 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans&display=swap');
 
 /* Global styles*/
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 nav {
     display: grid;
     grid-template-areas: "logo links";
@@ -29,7 +27,6 @@ nav a {
     color: #fff;
     transition: .2s;
 }
-
 nav .my-logo {
     font-family: 'Courgette', cursive;
     grid-area: logo;
@@ -38,11 +35,9 @@ nav .my-logo {
     justify-content: start;
     font-size: 2rem;
 }
-
 nav .my-logo a {
     text-decoration: none;
 }
-
 nav .pages-links {
     grid-area: links;
     display: flex;
@@ -51,7 +46,6 @@ nav .pages-links {
     margin-bottom: 0;
     list-style: none;
 }
-
 nav .pages-links li {
     display: inline;
     padding: 1rem;
