@@ -228,10 +228,12 @@ header.about-header {
     position: relative;
     cursor: pointer;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .projects .images .col img {
-    max-width: 100%;
     height: 30rem;
 }
 
